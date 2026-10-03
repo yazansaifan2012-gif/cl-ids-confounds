@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{\new{Mean wall-clock seconds per stage on the drift streams: scoring the stage, and fitting/updating after labels (single Linux node, one process).}}
+\label{tab:hybrid_cost}
+\footnotesize
+\begin{tabular}{lcc}
+\toprule
+\new{Arm} & \new{Score (s)} & \new{Update (s)} \\
+\midrule
+\new{Static-XGB} & \new{0.01} & \new{0.00} \\
+\new{Naive-XGB} & \new{0.00} & \new{0.59} \\
+\new{CADENCE-B} & \new{0.01} & \new{0.60} \\
+\new{ER-XGB} & \new{0.01} & \new{1.13} \\
+\new{CADENCE-R} & \new{0.01} & \new{1.13} \\
+\new{CADENCE-R-leaky} & \new{0.01} & \new{1.13} \\
+\new{ARF} & \new{0.21} & \new{1.15} \\
+\new{PWPAE-fair} & \new{0.61} & \new{7.18} \\
+\new{PWPAE-interleaved} & \new{7.64} & \new{0.00} \\
+\new{DWM} & \new{0.23} & \new{2.31} \\
+\new{CADENCE-H-ng} & \new{0.22} & \new{2.31} \\
+\new{CADENCE-H} & \new{0.23} & \new{2.31} \\
+\bottomrule
+\end{tabular}
+\end{table}

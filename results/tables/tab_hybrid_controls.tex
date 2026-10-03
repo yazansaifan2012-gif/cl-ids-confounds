@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{\new{Matched gate controls. The three fixed/selection rows are computed from the \emph{same} saved expert scores as CADENCE-H; the no-admission row is a separate arm. Dataset-level paired differences of CADENCE-H minus the control on the four drift streams; `Pos.' counts streams on which CADENCE-H is ahead.}}
+\label{tab:hybrid_controls}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lccccc}
+\toprule
+\new{Predictor} & \new{Drift-4} & \new{Class-incr.} & \new{H $-$ ctrl} & \new{Pos.} & \new{$t$ / W} \\
+\midrule
+\new{CADENCE-H (adaptive $w_t$)} & \new{0.6627} & \new{0.2611} & \new{--} & \new{--} & \new{--} \\
+\new{fixed $w=0.5$} & \new{0.6636} & \new{0.1787} & \new{$-0.0009$} & \new{2/4} & \new{$0.890$ / $1.000$} \\
+\new{fixed $w=w_0$ (calibration)} & \new{0.6498} & \new{0.1660} & \new{$+0.0129$} & \new{4/4} & \new{$0.382$ / $0.125$} \\
+\new{hard selection (previous stage)} & \new{0.6605} & \new{0.2497} & \new{$+0.0022$} & \new{4/4} & \new{$0.287$ / $0.125$} \\
+\new{CADENCE-H without admission} & \new{0.6623} & \new{0.2611} & \new{$+0.0004$} & \new{3/4} & \new{$0.749$ / $0.625$} \\
+\bottomrule
+\end{tabular}
+\end{table}

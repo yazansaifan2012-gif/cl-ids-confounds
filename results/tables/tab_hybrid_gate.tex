@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{\new{Behaviour of the validation gate. Mean trust weight $w_t$ assigned to the batch expert, and the CL-F1 each expert would attain alone versus the mixture, per stream. Best of the three in bold.}}
+\label{tab:hybrid_gate}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+\new{Dataset} & \new{mean $w_t$} & \new{$F_B$ alone} & \new{$F_O$ alone} & \new{Mixture} \\
+\midrule
+\new{CICIDS2017} & \new{0.37} & \new{0.4309} & \new{\textbf{0.5474}} & \new{0.5227} \\
+\new{UNSW-NB15} & \new{0.99} & \new{0.5351} & \new{0.3093} & \new{\textbf{0.5351}} \\
+\new{IoT-23} & \new{0.98} & \new{0.6967} & \new{0.5397} & \new{\textbf{0.6980}} \\
+\new{MQTTset} & \new{0.75} & \new{0.8947} & \new{0.8578} & \new{\textbf{0.8949}} \\
+\new{TON-IoT} & \new{0.24} & \new{0.1644} & \new{\textbf{0.3301}} & \new{0.2902} \\
+\new{Edge-IIoTset} & \new{0.40} & \new{0.1663} & \new{0.1562} & \new{\textbf{0.2320}} \\
+\bottomrule
+\end{tabular}
+\end{table}

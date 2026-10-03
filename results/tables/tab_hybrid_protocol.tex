@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{\new{Protocol confounds measured as matched pairs. Each pair differs in exactly one respect. Label release: the same PWPAE members scored per sample with interleaved learning versus scoring the whole stage before any member learns. Admission slice: the same rehearsal candidate admitted on a slice drawn from its own training records versus the disjoint guard partition. CL-F1 per stream (mean over seeds), the paired difference, and acceptance where applicable.}}
+\label{tab:hybrid_protocol}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llcccccccc}
+\toprule
+\new{Pair} & \new{Arm} & \new{CICIDS2017} & \new{UNSW-NB15} & \new{IoT-23} & \new{MQTTset} & \new{TON-IoT} & \new{Edge-IIoTset} & \new{Drift-4} & \new{All-6} \\
+\midrule
+\new{Label release: per-sample vs stage-level} & \new{PWPAE-interleaved} & \new{0.8915} & \new{0.3311} & \new{0.4935} & \new{0.8129} & \new{0.9168} & \new{0.7846} & \new{0.6322} & \new{0.7050} \\
+\new{} & \new{PWPAE-fair} & \new{0.5131} & \new{0.2765} & \new{0.4748} & \new{0.8177} & \new{0.3456} & \new{0.1590} & \new{0.5205} & \new{0.4311} \\
+\new{} & \new{\emph{difference}} & \new{$+0.378$} & \new{$+0.055$} & \new{$+0.019$} & \new{$-0.005$} & \new{$+0.571$} & \new{$+0.626$} & \new{$+0.1117$ (3/4, $p{=}0.302$)} & \new{$+0.2739$ (5/6, $p{=}0.067$)} \\
+\midrule
+\new{Admission slice: overlapping vs disjoint} & \new{CADENCE-R-leaky} & \new{0.4318} & \new{0.5372} & \new{0.6977} & \new{0.8948} & \new{0.1644} & \new{0.1663} & \new{0.6404} & \new{0.4820} \\
+\new{} & \new{CADENCE-R} & \new{0.4309} & \new{0.5351} & \new{0.6967} & \new{0.8947} & \new{0.1644} & \new{0.1663} & \new{0.6394} & \new{0.4814} \\
+\new{} & \new{\emph{difference}} & \new{$+0.001$} & \new{$+0.002$} & \new{$+0.001$} & \new{$+0.000$} & \new{$+0.000$} & \new{$+0.000$} & \new{$+0.0010$ (4/4, $p{=}0.089$)} & \new{$+0.0007$ (4/6, $p{=}0.100$)} \\
+\bottomrule
+\end{tabular}
+\end{table*}

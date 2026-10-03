@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+\caption{\new{Combination rules over the same two experts. Fixed weights and hard selection are computed from the saved scores of the CADENCE-H run; Dynamic Weighted Majority is a separate arm over the same experts. Mean CL-F1 per regime and mean rank across streams (lower is better). Best per column in bold.}}
+\label{tab:hybrid_rules}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lcccc}
+\toprule
+\new{Rule} & \new{Drift-4} & \new{Class-incr.} & \new{All-6} & \new{Mean rank} \\
+\midrule
+\new{fixed $w=0.0$ (online alone)} & \new{0.5636} & \new{0.2431} & \new{0.4567} & \new{10.67} \\
+\new{fixed $w=0.1$} & \new{0.5877} & \new{0.2443} & \new{0.4732} & \new{10.00} \\
+\new{fixed $w=0.2$} & \new{0.6267} & \new{0.2393} & \new{0.4976} & \new{9.17} \\
+\new{fixed $w=0.3$} & \new{0.6720} & \new{0.2423} & \new{0.5288} & \new{8.17} \\
+\new{fixed $w=0.4$} & \new{\textbf{0.6730}} & \new{0.2310} & \new{0.5257} & \new{7.17} \\
+\new{fixed $w=0.5$} & \new{0.6636} & \new{0.1787} & \new{0.5020} & \new{6.67} \\
+\new{fixed $w=0.6$} & \new{0.6607} & \new{0.1572} & \new{0.4929} & \new{6.50} \\
+\new{fixed $w=0.7$} & \new{0.6591} & \new{0.1746} & \new{0.4976} & \new{6.17} \\
+\new{fixed $w=0.8$} & \new{0.6465} & \new{0.1914} & \new{0.4948} & \new{6.17} \\
+\new{fixed $w=0.9$} & \new{0.6405} & \new{0.1882} & \new{0.4897} & \new{8.67} \\
+\new{fixed $w=1.0$ (batch alone)} & \new{0.6394} & \new{0.1654} & \new{0.4814} & \new{11.08} \\
+\new{fixed $w=w_0$ (calibration)} & \new{0.6498} & \new{0.1660} & \new{0.4886} & \new{8.92} \\
+\new{hard selection (previous-stage winner)} & \new{0.6605} & \new{0.2497} & \new{0.5236} & \new{6.92} \\
+\new{Dynamic Weighted Majority} & \new{0.6447} & \new{0.1923} & \new{0.4939} & \new{9.08} \\
+\new{prequential gate (CADENCE-H)} & \new{0.6627} & \new{\textbf{0.2611}} & \new{\textbf{0.5288}} & \new{\textbf{4.67}} \\
+\bottomrule
+\end{tabular}
+\end{table}

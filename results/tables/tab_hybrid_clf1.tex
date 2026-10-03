@@ -1,0 +1,28 @@
+\begin{table*}[t]
+\centering
+\caption{\new{Prequential CL-F1 of the validation-gated mixture (CADENCE-H) and all comparison arms (mean\,$\pm$\,standard deviation over three seeds). Every method, including the online experts, scores each chunk in full before receiving its labels; the guard set is never seen by a batch candidate. Best per row in bold.}}
+\label{tab:hybrid_clf1}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lcccccccccccc}
+\toprule
+\new{Dataset} & \new{Static-XGB} & \new{Naive-XGB} & \new{CADENCE-B} & \new{ER-XGB} & \new{CADENCE-R} & \new{CADENCE-R-leaky} & \new{ARF} & \new{PWPAE-fair} & \new{PWPAE-interleaved} & \new{DWM} & \new{CADENCE-H-ng} & \new{CADENCE-H} \\
+\midrule
+\multicolumn{13}{l}{\new{\emph{(a) Time-interleaved distribution-shift streams}}} \\
+\midrule
+\new{CICIDS2017} & \new{0.1401{\scriptsize\,$\pm$0.019}} & \new{0.3659{\scriptsize\,$\pm$0.035}} & \new{0.3909{\scriptsize\,$\pm$0.058}} & \new{0.4318{\scriptsize\,$\pm$0.032}} & \new{0.4309{\scriptsize\,$\pm$0.034}} & \new{0.4318{\scriptsize\,$\pm$0.032}} & \new{0.5474{\scriptsize\,$\pm$0.049}} & \new{0.5131{\scriptsize\,$\pm$0.037}} & \new{\textbf{0.8915}{\scriptsize\,$\pm$0.017}} & \new{0.4521{\scriptsize\,$\pm$0.043}} & \new{0.5195{\scriptsize\,$\pm$0.056}} & \new{0.5227{\scriptsize\,$\pm$0.054}} \\
+\new{UNSW-NB15} & \new{0.5163{\scriptsize\,$\pm$0.011}} & \new{0.4482{\scriptsize\,$\pm$0.019}} & \new{0.5226{\scriptsize\,$\pm$0.012}} & \new{\textbf{0.5372}{\scriptsize\,$\pm$0.005}} & \new{0.5351{\scriptsize\,$\pm$0.003}} & \new{\textbf{0.5372}{\scriptsize\,$\pm$0.005}} & \new{0.3093{\scriptsize\,$\pm$0.031}} & \new{0.2765{\scriptsize\,$\pm$0.022}} & \new{0.3311{\scriptsize\,$\pm$0.006}} & \new{0.5351{\scriptsize\,$\pm$0.003}} & \new{0.5372{\scriptsize\,$\pm$0.005}} & \new{0.5351{\scriptsize\,$\pm$0.004}} \\
+\new{IoT-23} & \new{\textbf{0.7046}{\scriptsize\,$\pm$0.011}} & \new{0.6481{\scriptsize\,$\pm$0.008}} & \new{0.6824{\scriptsize\,$\pm$0.023}} & \new{0.6969{\scriptsize\,$\pm$0.002}} & \new{0.6967{\scriptsize\,$\pm$0.005}} & \new{0.6977{\scriptsize\,$\pm$0.002}} & \new{0.5397{\scriptsize\,$\pm$0.038}} & \new{0.4748{\scriptsize\,$\pm$0.015}} & \new{0.4935{\scriptsize\,$\pm$0.018}} & \new{0.6967{\scriptsize\,$\pm$0.005}} & \new{0.6979{\scriptsize\,$\pm$0.001}} & \new{0.6980{\scriptsize\,$\pm$0.004}} \\
+\new{MQTTset} & \new{\textbf{0.8996}{\scriptsize\,$\pm$0.000}} & \new{0.8854{\scriptsize\,$\pm$0.004}} & \new{0.8945{\scriptsize\,$\pm$0.004}} & \new{0.8948{\scriptsize\,$\pm$0.003}} & \new{0.8947{\scriptsize\,$\pm$0.003}} & \new{0.8948{\scriptsize\,$\pm$0.003}} & \new{0.8578{\scriptsize\,$\pm$0.016}} & \new{0.8177{\scriptsize\,$\pm$0.009}} & \new{0.8129{\scriptsize\,$\pm$0.023}} & \new{0.8947{\scriptsize\,$\pm$0.003}} & \new{0.8947{\scriptsize\,$\pm$0.002}} & \new{0.8949{\scriptsize\,$\pm$0.003}} \\
+\cmidrule(l){1-13}
+\new{\textbf{Mean}} & \new{0.5652} & \new{0.5869} & \new{0.6226} & \new{0.6402} & \new{0.6394} & \new{0.6404} & \new{0.5636} & \new{0.5205} & \new{0.6322} & \new{0.6447} & \new{0.6623} & \new{\textbf{0.6627}} \\
+\midrule
+\multicolumn{13}{l}{\new{\emph{(b) Class-incremental streams}}} \\
+\midrule
+\new{TON-IoT} & \new{0.0112{\scriptsize\,$\pm$0.000}} & \new{0.3650{\scriptsize\,$\pm$0.001}} & \new{0.3650{\scriptsize\,$\pm$0.001}} & \new{0.1644{\scriptsize\,$\pm$0.019}} & \new{0.1644{\scriptsize\,$\pm$0.019}} & \new{0.1644{\scriptsize\,$\pm$0.019}} & \new{0.3301{\scriptsize\,$\pm$0.014}} & \new{0.3456{\scriptsize\,$\pm$0.032}} & \new{\textbf{0.9168}{\scriptsize\,$\pm$0.010}} & \new{0.2157{\scriptsize\,$\pm$0.042}} & \new{0.2902{\scriptsize\,$\pm$0.009}} & \new{0.2902{\scriptsize\,$\pm$0.009}} \\
+\new{Edge-IIoTset} & \new{0.0187{\scriptsize\,$\pm$0.002}} & \new{0.3279{\scriptsize\,$\pm$0.008}} & \new{0.3279{\scriptsize\,$\pm$0.008}} & \new{0.1663{\scriptsize\,$\pm$0.070}} & \new{0.1663{\scriptsize\,$\pm$0.070}} & \new{0.1663{\scriptsize\,$\pm$0.070}} & \new{0.1562{\scriptsize\,$\pm$0.012}} & \new{0.1590{\scriptsize\,$\pm$0.023}} & \new{\textbf{0.7846}{\scriptsize\,$\pm$0.042}} & \new{0.1689{\scriptsize\,$\pm$0.057}} & \new{0.2320{\scriptsize\,$\pm$0.048}} & \new{0.2320{\scriptsize\,$\pm$0.048}} \\
+\cmidrule(l){1-13}
+\new{\textbf{Mean}} & \new{0.0150} & \new{0.3464} & \new{0.3464} & \new{0.1654} & \new{0.1654} & \new{0.1654} & \new{0.2431} & \new{0.2523} & \new{\textbf{0.8507}} & \new{0.1923} & \new{0.2611} & \new{0.2611} \\
+\bottomrule
+\end{tabular}
+\end{table*}

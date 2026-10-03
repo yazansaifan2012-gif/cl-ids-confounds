@@ -1,0 +1,9 @@
+numpy==2.4.4
+scipy==1.17.1
+pandas
+scikit-learn==1.8.0
+imbalanced-learn==0.14.2
+xgboost==3.2.0
+river==0.25.0
+statsmodels==0.15.0
+matplotlib

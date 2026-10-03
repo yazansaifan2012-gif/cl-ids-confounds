@@ -1,0 +1,218 @@
+======================================================================
+CL-F1 per dataset
+======================================================================
+method           ARF  CADENCE-B  CADENCE-H  CADENCE-H-ng  CADENCE-R  CADENCE-R-leaky     DWM  ER-XGB  Naive-XGB  PWPAE-fair  PWPAE-interleaved  Static-XGB
+dataset                                                                                                                                                   
+CICIDS2017    0.5474     0.3909     0.5227        0.5195     0.4309           0.4318  0.4521  0.4318     0.3659      0.5131             0.8915      0.1401
+Edge_IIoTset  0.1562     0.3279     0.2320        0.2320     0.1663           0.1663  0.1689  0.1663     0.3279      0.1590             0.7846      0.0187
+IoT23         0.5397     0.6824     0.6980        0.6979     0.6967           0.6977  0.6967  0.6969     0.6481      0.4748             0.4935      0.7046
+MQTTset       0.8578     0.8945     0.8949        0.8947     0.8947           0.8948  0.8947  0.8948     0.8854      0.8177             0.8129      0.8996
+TON_IoT       0.3301     0.3650     0.2902        0.2902     0.1644           0.1644  0.2157  0.1644     0.3650      0.3456             0.9168      0.0112
+UNSW_NB15     0.3093     0.5226     0.5351        0.5372     0.5351           0.5372  0.5351  0.5372     0.4482      0.2765             0.3311      0.5163
+
+DRIFT-4 mean :
+method
+CADENCE-H            0.6627
+CADENCE-H-ng         0.6623
+DWM                  0.6447
+CADENCE-R-leaky      0.6404
+ER-XGB               0.6402
+CADENCE-R            0.6394
+PWPAE-interleaved    0.6322
+CADENCE-B            0.6226
+Naive-XGB            0.5869
+Static-XGB           0.5652
+ARF                  0.5636
+PWPAE-fair           0.5205
+
+CLASS-INCR mean :
+method
+PWPAE-interleaved    0.8507
+CADENCE-B            0.3464
+Naive-XGB            0.3464
+CADENCE-H            0.2611
+CADENCE-H-ng         0.2611
+PWPAE-fair           0.2523
+ARF                  0.2431
+DWM                  0.1923
+ER-XGB               0.1654
+CADENCE-R-leaky      0.1654
+CADENCE-R            0.1654
+Static-XGB           0.0150
+
+======================================================================
+KEY CONTRASTS — drift-4, dataset-level primary
+======================================================================
+  CADENCE-H    vs CADENCE-R    d=+0.0234  pos 4/4  ds_t=0.382 ds_W=0.125  CI[-0.0493,+0.0960]  d_z=0.51 | seed_t=0.1542 seed_W=0.0269   <- mixture vs batch expert alone
+  CADENCE-H    vs ARF          d=+0.0992  pos 3/4  ds_t=0.179 ds_W=0.250  CI[-0.0816,+0.2799]  d_z=0.87 | seed_t=0.0079 seed_W=0.0161   <- mixture vs online expert alone
+  CADENCE-H    vs PWPAE-fair   d=+0.1422  pos 4/4  ds_t=0.095 ds_W=0.125  CI[-0.0459,+0.3303]  d_z=1.20 | seed_t=0.0008 seed_W=0.0015   <- mixture vs PWPAE (fair timing)
+  CADENCE-H    vs Static-XGB   d=+0.0975  pos 2/4  ds_t=0.381 ds_W=0.625  CI[-0.2054,+0.4005]  d_z=0.51 | seed_t=0.0793 seed_W=0.1514   <- mixture vs static
+  CADENCE-B    vs Naive-XGB    d=+0.0357  pos 4/4  ds_t=0.083 ds_W=0.125  CI[-0.0085,+0.0799]  d_z=1.28 | seed_t=0.0020 seed_W=0.0010   <- admission on batch-only candidates (matched)
+  ER-XGB       vs Naive-XGB    d=+0.0533  pos 4/4  ds_t=0.050 ds_W=0.125  CI[-0.0002,+0.1067]  d_z=1.59 | seed_t=0.0012 seed_W=0.0005   <- replay at matched update policy
+  CADENCE-H    vs CADENCE-H-ng d=+0.0004  pos 3/4  ds_t=0.749 ds_W=0.625  CI[-0.0030,+0.0038]  d_z=0.18 | seed_t=0.7502 seed_W=1.0000   <- admission inside the mixture (matched)
+  PWPAE-interleaved vs PWPAE-fair   d=+0.1117  pos 3/4  ds_t=0.302 ds_W=0.250  CI[-0.1738,+0.3972]  d_z=0.62 | seed_t=0.0371 seed_W=0.0068   <- label-release schedule (matched)
+  CADENCE-R-leaky vs CADENCE-R    d=+0.0010  pos 4/4  ds_t=0.089 ds_W=0.125  CI[-0.0003,+0.0023]  d_z=1.24 | seed_t=0.2244 seed_W=0.3750   <- guard overlap with training records (matched)
+  CADENCE-H    vs DWM          d=+0.0181  pos 4/4  ds_t=0.379 ds_W=0.125  CI[-0.0378,+0.0739]  d_z=0.51 | seed_t=0.1400 seed_W=0.0269   <- prequential gate vs Dynamic Weighted Majority (matched)
+  CADENCE-B    vs Static-XGB   d=+0.0574  pos 2/4  ds_t=0.440 ds_W=0.875  CI[-0.1485,+0.2633]  d_z=0.44 | seed_t=0.1244 seed_W=0.4316   <- batch-only guarded adaptation vs static (package)
+  CADENCE-R    vs ER-XGB       d=-0.0008  pos 0/4  ds_t=0.168 ds_W=0.125  CI[-0.0022,+0.0006]  d_z=-0.90 | seed_t=0.3431 seed_W=0.4316   <- guard on top of replay
+  ER-XGB       vs Static-XGB   d=+0.0750  pos 2/4  ds_t=0.377 ds_W=0.625  CI[-0.1557,+0.3057]  d_z=0.52 | seed_t=0.0757 seed_W=0.1514   <- replay vs static
+
+======================================================================
+RETENTION (drift-4): protected vs independent
+======================================================================
+  Static-XGB   ret_val=0.8149 ret_hist=0.8037 inflation=+0.0112 accepted=--
+  Naive-XGB    ret_val=0.5021 ret_hist=0.4909 inflation=+0.0111 accepted=96/96 (100.0%)
+  CADENCE-B    ret_val=0.5606 ret_hist=0.5457 inflation=+0.0149 accepted=42/96 (43.8%)
+  ER-XGB       ret_val=0.7674 ret_hist=0.7513 inflation=+0.0160 accepted=96/96 (100.0%)
+  CADENCE-R    ret_val=0.7707 ret_hist=0.7513 inflation=+0.0194 accepted=62/96 (64.6%)
+  CADENCE-R-leaky ret_val=0.7675 ret_hist=0.7511 inflation=+0.0163 accepted=95/96 (99.0%)
+  ARF          ret_val=0.4319 ret_hist=0.4297 inflation=+0.0023 accepted=--
+  PWPAE-fair   ret_val=0.4066 ret_hist=0.4032 inflation=+0.0033 accepted=--
+  PWPAE-interleaved ret_val=0.3986 ret_hist=0.3952 inflation=+0.0034 accepted=--
+  DWM          ret_val=0.7503 ret_hist=0.7307 inflation=+0.0196 accepted=62/96 (64.6%)
+  CADENCE-H-ng ret_val=0.6317 ret_hist=0.6200 inflation=+0.0118 accepted=96/96 (100.0%)
+  CADENCE-H    ret_val=0.6353 ret_hist=0.6219 inflation=+0.0134 accepted=62/96 (64.6%)
+
+======================================================================
+GATE BEHAVIOUR
+======================================================================
+  CICIDS2017    w=0.37  F_B=0.4309  F_O=0.5474  mix=0.5227  (mix - best expert = -0.0247)
+  UNSW_NB15     w=0.99  F_B=0.5351  F_O=0.3093  mix=0.5351  (mix - best expert = +0.0000)
+  IoT23         w=0.98  F_B=0.6967  F_O=0.5397  mix=0.6980  (mix - best expert = +0.0013)
+  MQTTset       w=0.75  F_B=0.8947  F_O=0.8578  mix=0.8949  (mix - best expert = +0.0003)
+  TON_IoT       w=0.24  F_B=0.1644  F_O=0.3301  mix=0.2902  (mix - best expert = -0.0399)
+  Edge_IIoTset  w=0.40  F_B=0.1663  F_O=0.1562  mix=0.2320  (mix - best expert = +0.0656)
+
+======================================================================
+GATE CONTROLS (same saved scores)
+======================================================================
+  CADENCE-H (adaptive $w_t$)       drift=0.6627  class-incr=0.2611  H-ctrl=+0.0000  pos=0/4  t=nan  W=nan
+  fixed $w=0.5$                    drift=0.6636  class-incr=0.1787  H-ctrl=-0.0009  pos=2/4  t=0.890  W=1.000
+  fixed $w=w_0$ (calibration)      drift=0.6498  class-incr=0.1660  H-ctrl=+0.0129  pos=4/4  t=0.382  W=0.125
+  hard selection (previous stage)  drift=0.6605  class-incr=0.2497  H-ctrl=+0.0022  pos=4/4  t=0.287  W=0.125
+  CADENCE-H without admission      drift=0.6623  class-incr=0.2611  H-ctrl=+0.0004  pos=3/4  t=0.749  W=0.625
+  fraction of records whose class differs from the better expert's: 0.058
+
+======================================================================
+HOLM-ADJUSTED dataset-level t p-values (drift-4, family = 13 contrasts)
+======================================================================
+  CADENCE-H          vs CADENCE-R          raw=0.382  holm=1.000
+  CADENCE-H          vs ARF                raw=0.179  holm=1.000
+  CADENCE-H          vs PWPAE-fair         raw=0.095  holm=0.991
+  CADENCE-H          vs Static-XGB         raw=0.381  holm=1.000
+  CADENCE-B          vs Naive-XGB          raw=0.083  holm=0.991
+  ER-XGB             vs Naive-XGB          raw=0.050  holm=0.655
+  CADENCE-H          vs CADENCE-H-ng       raw=0.749  holm=1.000
+  PWPAE-interleaved  vs PWPAE-fair         raw=0.302  holm=1.000
+  CADENCE-R-leaky    vs CADENCE-R          raw=0.089  holm=0.991
+  CADENCE-H          vs DWM                raw=0.379  holm=1.000
+  CADENCE-B          vs Static-XGB         raw=0.440  holm=1.000
+  CADENCE-R          vs ER-XGB             raw=0.168  holm=1.000
+  ER-XGB             vs Static-XGB         raw=0.377  holm=1.000
+
+======================================================================
+PROTOCOL A/Bs (matched pairs)
+======================================================================
+  Label release: per-sample vs stage-level PWPAE-interleaved  0.8915 0.3311 0.4935 0.8129 0.9168 0.7846  drift=0.6322 all=0.7050
+  Label release: per-sample vs stage-level PWPAE-fair         0.5131 0.2765 0.4748 0.8177 0.3456 0.1590  drift=0.5205 all=0.4311
+     delta drift-4 +0.1117 pos 3/4 t=0.302 CI[-0.174,+0.397] | all-6 +0.2739 pos 5/6 t=0.067 W=0.062
+  Admission slice: overlapping vs disjoint CADENCE-R-leaky    0.4318 0.5372 0.6977 0.8948 0.1644 0.1663  drift=0.6404 all=0.4820  acc=95/96
+  Admission slice: overlapping vs disjoint CADENCE-R          0.4309 0.5351 0.6967 0.8947 0.1644 0.1663  drift=0.6394 all=0.4814  acc=62/96
+     delta drift-4 +0.0010 pos 4/4 t=0.089 CI[-0.000,+0.002] | all-6 +0.0007 pos 4/6 t=0.100 W=0.125
+
+======================================================================
+COMBINATION RULES over the same saved expert scores (fixed-w sweep, hard, DWM, gate)
+======================================================================
+  best fixed w: drift-4 f1_fix04  class-incr f1_fix01  all-6 f1_fix03
+  fixed $w=0.0$ (online alone)               drift=0.5636  ci=0.2431  all=0.4567  rank=10.67
+  fixed $w=0.1$                              drift=0.5877  ci=0.2443  all=0.4732  rank=10.00
+  fixed $w=0.2$                              drift=0.6267  ci=0.2393  all=0.4976  rank=9.17
+  fixed $w=0.3$                              drift=0.6720  ci=0.2423  all=0.5288  rank=8.17
+  fixed $w=0.4$                              drift=0.6730  ci=0.2310  all=0.5257  rank=7.17
+  fixed $w=0.5$                              drift=0.6636  ci=0.1787  all=0.5020  rank=6.67
+  fixed $w=0.6$                              drift=0.6607  ci=0.1572  all=0.4929  rank=6.50
+  fixed $w=0.7$                              drift=0.6591  ci=0.1746  all=0.4976  rank=6.17
+  fixed $w=0.8$                              drift=0.6465  ci=0.1914  all=0.4948  rank=6.17
+  fixed $w=0.9$                              drift=0.6405  ci=0.1882  all=0.4897  rank=8.67
+  fixed $w=1.0$ (batch alone)                drift=0.6394  ci=0.1654  all=0.4814  rank=11.08
+  fixed $w=w_0$ (calibration)                drift=0.6498  ci=0.1660  all=0.4886  rank=8.92
+  hard selection (previous-stage winner)     drift=0.6605  ci=0.2497  all=0.5236  rank=6.92
+  Dynamic Weighted Majority                  drift=0.6447  ci=0.1923  all=0.4939  rank=9.08
+  prequential gate (CADENCE-H)               drift=0.6627  ci=0.2611  all=0.5288  rank=4.67
+  gate - best fixed (drift-4, f1_fix04): -0.0103  pos 3/4  t=0.507
+  gate - best fixed (class-incr, f1_fix01): +0.0168  pos 1/2  t=0.804
+  gate - best fixed (all-6, f1_fix03): +0.0001  pos 4/6  t=0.998
+
+======================================================================
+FRIEDMAN + AVERAGE RANKS (dataset-level, all arms)
+======================================================================
+  Friedman drift-4: k=12 N=4 chi2=19.93 p=0.0463  (Nemenyi CD alpha=.05 = 8.33)
+  Friedman all-6: k=12 N=6 chi2=12.09 p=0.3570  (Nemenyi CD alpha=.05 = 6.80)
+  CADENCE-H          rank drift-4=2.75  all-6=3.67
+  CADENCE-H-ng       rank drift-4=3.75  all-6=4.33
+  CADENCE-R-leaky    rank drift-4=4.12  all-6=5.75
+  ER-XGB             rank drift-4=4.38  all-6=5.92
+  PWPAE-interleaved  rank drift-4=8.50  all-6=6.00
+  CADENCE-B          rank drift-4=8.25  all-6=6.33
+  DWM                rank drift-4=6.12  all-6=6.42
+  Naive-XGB          rank drift-4=9.50  all-6=7.17
+  CADENCE-R          rank drift-4=6.88  all-6=7.58
+  Static-XGB         rank drift-4=5.50  all-6=7.67
+  ARF                rank drift-4=8.25  all-6=8.17
+  PWPAE-fair         rank drift-4=10.00  all-6=9.00
+
+======================================================================
+STAGE-LEVEL MIXED MODEL  f1 ~ arm + (1 | dataset:seed)   [secondary]
+======================================================================
+  CADENCE-H          vs CADENCE-R          drift-4  coef=+0.0234  p=0.3000
+  CADENCE-H          vs CADENCE-R          all-6    coef=+0.0475  p=0.0141
+  CADENCE-H          vs ARF                drift-4  coef=+0.0992  p=0.0000
+  CADENCE-H          vs ARF                all-6    coef=+0.0721  p=0.0002
+  CADENCE-H          vs PWPAE-fair         drift-4  coef=+0.1422  p=0.0000
+  CADENCE-H          vs PWPAE-fair         all-6    coef=+0.0977  p=0.0000
+  CADENCE-H          vs Static-XGB         drift-4  coef=+0.0975  p=0.0000
+  CADENCE-H          vs Static-XGB         all-6    coef=+0.1471  p=0.0000
+  CADENCE-B          vs Naive-XGB          drift-4  coef=+0.0357  p=0.0760
+  CADENCE-B          vs Naive-XGB          all-6    coef=+0.0238  p=0.2326
+  ER-XGB             vs Naive-XGB          drift-4  coef=+0.0533  p=0.0150
+  ER-XGB             vs Naive-XGB          all-6    coef=-0.0248  p=0.2232
+  CADENCE-H          vs CADENCE-H-ng       drift-4  coef=+0.0004  p=0.9863
+  CADENCE-H          vs CADENCE-H-ng       all-6    coef=+0.0003  p=0.9900
+  PWPAE-interleaved  vs PWPAE-fair         drift-4  coef=+0.1117  p=0.0000
+  PWPAE-interleaved  vs PWPAE-fair         all-6    coef=+0.2739  p=0.0000
+  CADENCE-R-leaky    vs CADENCE-R          drift-4  coef=+0.0010  p=0.9646
+  CADENCE-R-leaky    vs CADENCE-R          all-6    coef=+0.0007  p=0.9702
+  CADENCE-H          vs DWM                drift-4  coef=+0.0181  p=0.4244
+  CADENCE-H          vs DWM                all-6    coef=+0.0350  p=0.0739
+  CADENCE-B          vs Static-XGB         drift-4  coef=+0.0574  p=0.0008
+  CADENCE-B          vs Static-XGB         all-6    coef=+0.1488  p=0.0000
+  CADENCE-R          vs ER-XGB             drift-4  coef=-0.0008  p=0.9711
+  CADENCE-R          vs ER-XGB             all-6    coef=-0.0005  p=0.9757
+  ER-XGB             vs Static-XGB         drift-4  coef=+0.0750  p=0.0001
+  ER-XGB             vs Static-XGB         all-6    coef=+0.1001  p=0.0000
+
+======================================================================
+COST per stage (drift-4 mean, seconds): score / fit+update
+======================================================================
+  Static-XGB         score=0.01  update=0.00
+  Naive-XGB          score=0.00  update=0.59
+  CADENCE-B          score=0.01  update=0.60
+  ER-XGB             score=0.01  update=1.13
+  CADENCE-R          score=0.01  update=1.13
+  CADENCE-R-leaky    score=0.01  update=1.13
+  ARF                score=0.21  update=1.15
+  PWPAE-fair         score=0.61  update=7.18
+  PWPAE-interleaved  score=7.64  update=0.00
+  DWM                score=0.23  update=2.31
+  CADENCE-H-ng       score=0.22  update=2.31
+  CADENCE-H          score=0.23  update=2.31
+
+======================================================================
+STAGE / GUARD SIZES and EXPERT COMPLEMENTARITY (CADENCE-H rows)
+======================================================================
+  CICIDS2017    stage=1513 guard=379 min/class=77.2 disagree=0.141 union=0.742 f1B=0.431 f1O=0.547 mix=0.523
+  UNSW_NB15     stage=1719 guard=430 min/class= 3.8 disagree=0.555 union=0.695 f1B=0.535 f1O=0.309 mix=0.535
+  IoT23         stage=1512 guard=378 min/class= 1.2 disagree=0.219 union=0.860 f1B=0.697 f1O=0.540 mix=0.698
+  MQTTset       stage=1306 guard=327 min/class= 5.6 disagree=0.117 union=0.916 f1B=0.895 f1O=0.858 mix=0.895
+  TON_IoT       stage=1719 guard=430 min/class=233.6 disagree=0.317 union=0.712 f1B=0.164 f1O=0.330 mix=0.290
+  Edge_IIoTset  stage=1513 guard=379 min/class=119.6 disagree=0.685 union=0.394 f1B=0.166 f1O=0.156 mix=0.232

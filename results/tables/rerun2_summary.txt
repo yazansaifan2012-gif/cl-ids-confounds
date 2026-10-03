@@ -1,0 +1,18 @@
+chrono results not found or empty: skipping tab_hybrid_chrono.tex
+
+======================================================================
+ONLINE BACKBONE: ARF vs SRP
+======================================================================
+  online expert alone          ARF  0.5474 0.3093 0.5397 0.8578 0.3301 0.1562  drift=0.5636 all=0.4567
+  online expert alone          SRP  0.4851 0.2523 0.4470 0.7144 0.3016 0.1478  drift=0.4747 all=0.3914
+  prequential mixture          ARF  0.5227 0.5351 0.6980 0.8949 0.2902 0.2320  drift=0.6627 all=0.5288
+  prequential mixture          SRP  0.4926 0.5353 0.6967 0.8946 0.2674 0.2038  drift=0.6548 all=0.5151
+  Dynamic Weighted Majority    ARF  0.4521 0.5351 0.6967 0.8947 0.2157 0.1689  drift=0.6447 all=0.4939
+  Dynamic Weighted Majority    SRP  0.4309 0.5351 0.6967 0.8947 0.2089 0.1463  drift=0.6394 all=0.4854
+  ARF gate vs best fixed (drift-4): gate=0.6627  best=f1_fix04 0.6730  gate-best=-0.0103  pos 3/4
+  ARF gate vs best fixed (class-incr): gate=0.2611  best=f1_fix01 0.2443  gate-best=+0.0168  pos 1/2
+  ARF gate vs best fixed (all-6): gate=0.5288  best=f1_fix03 0.5288  gate-best=+0.0001  pos 4/6
+  SRP gate vs best fixed (drift-4): gate=0.6548  best=f1_fix06 0.6499  gate-best=+0.0050  pos 3/4
+  SRP gate vs best fixed (class-incr): gate=0.2356  best=f1_fix00 0.2247  gate-best=+0.0109  pos 1/2
+  SRP gate vs best fixed (all-6): gate=0.5151  best=f1_fix08 0.4915  gate-best=+0.0235  pos 4/6
+  SRP: gate - DWM all-6 +0.0297  pos 5/6

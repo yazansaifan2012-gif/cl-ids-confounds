@@ -1,0 +1,167 @@
+nohup: ignoring input
+=== RERUN 2a skipped: data/CICIDS2017_chrono/cicids2017_chrono.csv not found (run prepare_cicids_raw.py first) ===
+=== RERUN 2b: SRP online-expert arms (SRP, CADENCE-H-srp, DWM-srp) x 6 datasets x 3 seeds ===
+  [data] TON_IoT        -> <repo>/data/TON_IoT/train_test_network.csv
+  [data] CICIDS2017     -> <repo>/data/CICIDS2017/cicids2017_cleaned.csv
+  [data] Edge_IIoTset   -> <repo>/data/Edge_IIoTset/DNN-EdgeIIoT-dataset.csv
+  [data] UNSW_NB15      -> <repo>/data/UNSW_NB15/unsw_nb15.csv
+  [data] IoT23          -> <repo>/data/IoT23/iot23.csv
+  [data] MQTTset        -> <repo>/data/MQTTset/mqttset.csv
+
+==== TON_IoT seed=42  (gate=prequential, beta=30, substages=1) ====
+    train=7649 val=1688 hist=1913 stream=13751 classes=10
+    SRP          CL-F1=0.2899  ret_hist=0.0049  (43s)
+    CADENCE-H-srp CL-F1=0.2706  ret_hist=0.1005  |  F_B=0.1432 F_O=0.2899  w=0.23  fix50=0.1900 hard=0.2867 disagree=0.270 union=0.702  bestfix=w0.0:0.2899  acc=100%  (56s)
+    DWM-srp      CL-F1=0.1432  ret_hist=0.6151  |  F_B=0.1432 F_O=0.2899  w=0.94  fix50=0.1900 hard=0.2867 disagree=0.270 union=0.702  bestfix=w0.0:0.2899  acc=100%  (56s)
+
+==== TON_IoT seed=123  (gate=prequential, beta=30, substages=1) ====
+    train=7649 val=1688 hist=1913 stream=13751 classes=10
+    SRP          CL-F1=0.3268  ret_hist=0.0062  (38s)
+    CADENCE-H-srp CL-F1=0.2713  ret_hist=0.1065  |  F_B=0.1711 F_O=0.3268  w=0.24  fix50=0.1817 hard=0.3257 disagree=0.284 union=0.716  bestfix=w0.0:0.3268  acc=100%  (48s)
+    DWM-srp      CL-F1=0.3045  ret_hist=0.1008  |  F_B=0.1711 F_O=0.3268  w=0.19  fix50=0.1817 hard=0.3257 disagree=0.284 union=0.716  bestfix=w0.0:0.3268  acc=100%  (49s)
+
+==== TON_IoT seed=456  (gate=prequential, beta=30, substages=1) ====
+    train=7649 val=1688 hist=1913 stream=13751 classes=10
+    SRP          CL-F1=0.2880  ret_hist=0.0066  (44s)
+    CADENCE-H-srp CL-F1=0.2603  ret_hist=0.1069  |  F_B=0.1790 F_O=0.2880  w=0.29  fix50=0.1824 hard=0.2874 disagree=0.330 union=0.714  bestfix=w0.0:0.2880  acc=100%  (55s)
+    DWM-srp      CL-F1=0.1790  ret_hist=0.5905  |  F_B=0.1790 F_O=0.2880  w=0.94  fix50=0.1824 hard=0.2874 disagree=0.330 union=0.714  bestfix=w0.0:0.2880  acc=100%  (55s)
+
+==== CICIDS2017 seed=42  (gate=prequential, beta=30, substages=1) ====
+    train=6732 val=1485 hist=1683 stream=12101 classes=7
+    SRP          CL-F1=0.4793  ret_hist=0.0718  (87s)
+    CADENCE-H-srp CL-F1=0.5017  ret_hist=0.3428  |  F_B=0.4217 F_O=0.4793  w=0.44  fix50=0.5089 hard=0.4766 disagree=0.233 union=0.725  bestfix=w0.3:0.5173  acc=100%  (98s)
+    DWM-srp      CL-F1=0.4217  ret_hist=0.7755  |  F_B=0.4217 F_O=0.4793  w=0.94  fix50=0.5089 hard=0.4766 disagree=0.233 union=0.725  bestfix=w0.3:0.5173  acc=100%  (98s)
+
+==== CICIDS2017 seed=123  (gate=prequential, beta=30, substages=1) ====
+    train=6732 val=1485 hist=1683 stream=12101 classes=7
+    SRP          CL-F1=0.5181  ret_hist=0.0903  (92s)
+    CADENCE-H-srp CL-F1=0.4831  ret_hist=0.3402  |  F_B=0.4681 F_O=0.5181  w=0.46  fix50=0.5012 hard=0.4764 disagree=0.114 union=0.736  bestfix=w0.2:0.5742  acc=100%  (102s)
+    DWM-srp      CL-F1=0.4681  ret_hist=0.7927  |  F_B=0.4681 F_O=0.5181  w=0.94  fix50=0.5012 hard=0.4764 disagree=0.114 union=0.736  bestfix=w0.2:0.5742  acc=100%  (102s)
+
+==== CICIDS2017 seed=456  (gate=prequential, beta=30, substages=1) ====
+    train=6732 val=1485 hist=1683 stream=12101 classes=7
+    SRP          CL-F1=0.4580  ret_hist=0.0735  (88s)
+    CADENCE-H-srp CL-F1=0.4930  ret_hist=0.3682  |  F_B=0.4029 F_O=0.4580  w=0.52  fix50=0.5190 hard=0.4655 disagree=0.200 union=0.723  bestfix=w0.2:0.5505  acc=75%  (98s)
+    DWM-srp      CL-F1=0.4029  ret_hist=0.8202  |  F_B=0.4029 F_O=0.4580  w=0.94  fix50=0.5190 hard=0.4655 disagree=0.200 union=0.723  bestfix=w0.2:0.5505  acc=75%  (98s)
+
+==== Edge_IIoTset seed=42  (gate=prequential, beta=30, substages=1) ====
+    train=6732 val=1485 hist=1683 stream=12101 classes=15
+    SRP          CL-F1=0.1504  ret_hist=0.0132  (63s)
+    CADENCE-H-srp CL-F1=0.2041  ret_hist=0.2048  |  F_B=0.1292 F_O=0.1504  w=0.38  fix50=0.1338 hard=0.1476 disagree=0.726 union=0.354  bestfix=w0.7:0.2026  acc=100%  (80s)
+    DWM-srp      CL-F1=0.1130  ret_hist=0.3059  |  F_B=0.1292 F_O=0.1504  w=0.44  fix50=0.1338 hard=0.1476 disagree=0.726 union=0.354  bestfix=w0.7:0.2026  acc=100%  (80s)
+
+==== Edge_IIoTset seed=123  (gate=prequential, beta=30, substages=1) ====
+    train=6732 val=1485 hist=1683 stream=12101 classes=15
+    SRP          CL-F1=0.1538  ret_hist=0.0216  (62s)
+    CADENCE-H-srp CL-F1=0.1567  ret_hist=0.1522  |  F_B=0.2474 F_O=0.1538  w=0.34  fix50=0.1151 hard=0.2736 disagree=0.720 union=0.473  bestfix=w0.8:0.2529  acc=100%  (79s)
+    DWM-srp      CL-F1=0.2359  ret_hist=0.3053  |  F_B=0.2474 F_O=0.1538  w=0.44  fix50=0.1151 hard=0.2736 disagree=0.720 union=0.473  bestfix=w0.8:0.2529  acc=100%  (79s)
+
+==== Edge_IIoTset seed=456  (gate=prequential, beta=30, substages=1) ====
+    train=6732 val=1485 hist=1683 stream=12101 classes=15
+    SRP          CL-F1=0.1392  ret_hist=0.0285  (64s)
+    CADENCE-H-srp CL-F1=0.2507  ret_hist=0.1983  |  F_B=0.1225 F_O=0.1392  w=0.40  fix50=0.1524 hard=0.1350 disagree=0.775 union=0.352  bestfix=w0.8:0.2554  acc=100%  (82s)
+    DWM-srp      CL-F1=0.0898  ret_hist=0.4647  |  F_B=0.1225 F_O=0.1392  w=0.70  fix50=0.1524 hard=0.1350 disagree=0.775 union=0.352  bestfix=w0.8:0.2554  acc=100%  (83s)
+
+==== UNSW_NB15 seed=42  (gate=prequential, beta=30, substages=1) ====
+    train=7650 val=1688 hist=1913 stream=13752 classes=10
+    SRP          CL-F1=0.2607  ret_hist=0.1839  (223s)
+    CADENCE-H-srp CL-F1=0.5361  ret_hist=0.6073  |  F_B=0.5356 F_O=0.2607  w=1.00  fix50=0.4686 hard=0.5356 disagree=0.553 union=0.664  bestfix=w0.9:0.5363  acc=50%  (241s)
+    DWM-srp      CL-F1=0.5356  ret_hist=0.6073  |  F_B=0.5356 F_O=0.2607  w=0.94  fix50=0.4686 hard=0.5356 disagree=0.553 union=0.664  bestfix=w0.9:0.5363  acc=50%  (241s)
+
+==== UNSW_NB15 seed=123  (gate=prequential, beta=30, substages=1) ====
+    train=7650 val=1688 hist=1913 stream=13752 classes=10
+    SRP          CL-F1=0.2486  ret_hist=0.1947  (217s)
+    CADENCE-H-srp CL-F1=0.5315  ret_hist=0.6217  |  F_B=0.5315 F_O=0.2486  w=1.00  fix50=0.4445 hard=0.5315 disagree=0.532 union=0.653  bestfix=w1.0:0.5315  acc=62%  (235s)
+    DWM-srp      CL-F1=0.5315  ret_hist=0.6217  |  F_B=0.5315 F_O=0.2486  w=0.94  fix50=0.4445 hard=0.5315 disagree=0.532 union=0.653  bestfix=w1.0:0.5315  acc=62%  (236s)
+
+==== UNSW_NB15 seed=456  (gate=prequential, beta=30, substages=1) ====
+    train=7650 val=1688 hist=1913 stream=13752 classes=10
+    SRP          CL-F1=0.2476  ret_hist=0.1967  (221s)
+    CADENCE-H-srp CL-F1=0.5383  ret_hist=0.6299  |  F_B=0.5383 F_O=0.2476  w=1.00  fix50=0.4480 hard=0.5383 disagree=0.552 union=0.661  bestfix=w0.8:0.5393  acc=62%  (240s)
+    DWM-srp      CL-F1=0.5383  ret_hist=0.6300  |  F_B=0.5383 F_O=0.2476  w=0.94  fix50=0.4480 hard=0.5383 disagree=0.552 union=0.661  bestfix=w0.8:0.5393  acc=62%  (241s)
+
+==== IoT23 seed=42  (gate=prequential, beta=30, substages=1) ====
+    train=6732 val=1485 hist=1683 stream=12100 classes=9
+    SRP          CL-F1=0.4573  ret_hist=0.4637  (97s)
+    CADENCE-H-srp CL-F1=0.6911  ret_hist=0.6975  |  F_B=0.6912 F_O=0.4573  w=1.00  fix50=0.7064 hard=0.6912 disagree=0.350 union=0.854  bestfix=w0.6:0.7131  acc=62%  (109s)
+    DWM-srp      CL-F1=0.6912  ret_hist=0.6976  |  F_B=0.6912 F_O=0.4573  w=0.94  fix50=0.7064 hard=0.6912 disagree=0.350 union=0.854  bestfix=w0.6:0.7131  acc=62%  (109s)
+
+==== IoT23 seed=123  (gate=prequential, beta=30, substages=1) ====
+    train=6732 val=1485 hist=1683 stream=12100 classes=9
+    SRP          CL-F1=0.4231  ret_hist=0.4337  (111s)
+    CADENCE-H-srp CL-F1=0.6986  ret_hist=0.6871  |  F_B=0.6984 F_O=0.4231  w=1.00  fix50=0.7009 hard=0.6984 disagree=0.370 union=0.855  bestfix=w0.7:0.7125  acc=62%  (122s)
+    DWM-srp      CL-F1=0.6984  ret_hist=0.6867  |  F_B=0.6984 F_O=0.4231  w=0.94  fix50=0.7009 hard=0.6984 disagree=0.370 union=0.855  bestfix=w0.7:0.7125  acc=62%  (122s)
+
+==== IoT23 seed=456  (gate=prequential, beta=30, substages=1) ====
+    train=6732 val=1485 hist=1683 stream=12100 classes=9
+    SRP          CL-F1=0.4606  ret_hist=0.4664  (101s)
+    CADENCE-H-srp CL-F1=0.7005  ret_hist=0.6978  |  F_B=0.7006 F_O=0.4606  w=1.00  fix50=0.6925 hard=0.7006 disagree=0.297 union=0.852  bestfix=w0.7:0.7097  acc=62%  (112s)
+    DWM-srp      CL-F1=0.7006  ret_hist=0.6981  |  F_B=0.7006 F_O=0.4606  w=0.94  fix50=0.6925 hard=0.7006 disagree=0.297 union=0.852  bestfix=w0.7:0.7097  acc=62%  (112s)
+
+==== MQTTset seed=42  (gate=prequential, beta=30, substages=1) ====
+    train=5813 val=1283 hist=1454 stream=10451 classes=6
+    SRP          CL-F1=0.6838  ret_hist=0.6679  (48s)
+    CADENCE-H-srp CL-F1=0.8978  ret_hist=0.8936  |  F_B=0.8977 F_O=0.6838  w=0.99  fix50=0.8946 hard=0.8977 disagree=0.294 union=0.921  bestfix=w1.0:0.8977  acc=38%  (54s)
+    DWM-srp      CL-F1=0.8977  ret_hist=0.8942  |  F_B=0.8977 F_O=0.6838  w=0.94  fix50=0.8946 hard=0.8977 disagree=0.294 union=0.921  bestfix=w1.0:0.8977  acc=38%  (55s)
+
+==== MQTTset seed=123  (gate=prequential, beta=30, substages=1) ====
+    train=5813 val=1283 hist=1454 stream=10451 classes=6
+    SRP          CL-F1=0.6757  ret_hist=0.6873  (51s)
+    CADENCE-H-srp CL-F1=0.8926  ret_hist=0.8958  |  F_B=0.8926 F_O=0.6757  w=1.00  fix50=0.8899 hard=0.8926 disagree=0.278 union=0.918  bestfix=w0.7:0.8929  acc=50%  (57s)
+    DWM-srp      CL-F1=0.8926  ret_hist=0.8958  |  F_B=0.8926 F_O=0.6757  w=0.94  fix50=0.8899 hard=0.8926 disagree=0.278 union=0.918  bestfix=w0.7:0.8929  acc=50%  (56s)
+
+==== MQTTset seed=456  (gate=prequential, beta=30, substages=1) ====
+    train=5813 val=1283 hist=1454 stream=10451 classes=6
+    SRP          CL-F1=0.7837  ret_hist=0.7832  (50s)
+    CADENCE-H-srp CL-F1=0.8935  ret_hist=0.8962  |  F_B=0.8936 F_O=0.7837  w=0.95  fix50=0.8927 hard=0.8936 disagree=0.217 union=0.930  bestfix=w1.0:0.8936  acc=50%  (56s)
+    DWM-srp      CL-F1=0.8936  ret_hist=0.8957  |  F_B=0.8936 F_O=0.7837  w=0.94  fix50=0.8927 hard=0.8936 disagree=0.217 union=0.930  bestfix=w1.0:0.8936  acc=50%  (56s)
+
+[saved] hybrid_results_srp.csv
+
+===== drift subset: CL-F1 / independent retention =====
+                   f1  ret_hist
+method                         
+CADENCE-H-srp  0.6548    0.6398
+DWM-srp        0.6394    0.7513
+SRP            0.4747    0.3594
+
+===== all six streams =====
+                   f1  ret_hist
+method                         
+CADENCE-H-srp  0.5151    0.4748
+DWM-srp        0.4854    0.6332
+SRP            0.3914    0.2441
+
+===== per-dataset CL-F1 =====
+method        CADENCE-H-srp  DWM-srp     SRP
+dataset                                     
+CICIDS2017           0.4926   0.4309  0.4851
+Edge_IIoTset         0.2038   0.1463  0.1478
+IoT23                0.6967   0.6967  0.4470
+MQTTset              0.8946   0.8947  0.7144
+TON_IoT              0.2674   0.2089  0.3016
+UNSW_NB15            0.5353   0.5351  0.2523
+=== rerun-2 tables ===
+Traceback (most recent call last):
+  File "<repo>/make_rerun2_tables.py", line 99, in <module>
+    main()
+  File "<repo>/make_rerun2_tables.py", line 29, in main
+    Cc = pd.read_csv(a.chrono)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/ai_lab/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/ai_lab/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/ai_lab/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/ai_lab/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1922, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/ai_lab/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 95, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 575, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file

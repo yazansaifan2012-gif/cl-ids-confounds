@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\caption{\new{Historical retention on the drifting streams measured on the protected calibration split ($\mathcal{X}_{\mathrm{val}}$) and on an independent historical test set ($\mathcal{X}_{\mathrm{hist}}$) that is never used for training, calibration or admission; and the fraction of candidate updates admitted by a leakage-free guard, shown as admitted/attempted on these four streams.}}
+\label{tab:hybrid_retention}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\toprule
+\new{Method} & \new{Ret.\ (val)} & \new{Ret.\ (hist)} & \new{Inflation} & \new{Accepted} \\
+\midrule
+\new{Static-XGB} & \new{0.8149} & \new{0.8037} & \new{$+0.0112$} & \new{--} \\
+\new{Naive-XGB} & \new{0.5021} & \new{0.4909} & \new{$+0.0111$} & \new{96/96 (100.0\%)} \\
+\new{CADENCE-B} & \new{0.5606} & \new{0.5457} & \new{$+0.0149$} & \new{42/96 (43.8\%)} \\
+\new{ER-XGB} & \new{0.7674} & \new{0.7513} & \new{$+0.0160$} & \new{96/96 (100.0\%)} \\
+\new{CADENCE-R} & \new{0.7707} & \new{0.7513} & \new{$+0.0194$} & \new{62/96 (64.6\%)} \\
+\new{CADENCE-R-leaky} & \new{0.7675} & \new{0.7511} & \new{$+0.0163$} & \new{95/96 (99.0\%)} \\
+\new{ARF} & \new{0.4319} & \new{0.4297} & \new{$+0.0023$} & \new{--} \\
+\new{PWPAE-fair} & \new{0.4066} & \new{0.4032} & \new{$+0.0033$} & \new{--} \\
+\new{PWPAE-interleaved} & \new{0.3986} & \new{0.3952} & \new{$+0.0034$} & \new{--} \\
+\new{DWM} & \new{0.7503} & \new{0.7307} & \new{$+0.0196$} & \new{62/96 (64.6\%)} \\
+\new{CADENCE-H-ng} & \new{0.6317} & \new{0.6200} & \new{$+0.0118$} & \new{96/96 (100.0\%)} \\
+\new{CADENCE-H} & \new{0.6353} & \new{0.6219} & \new{$+0.0134$} & \new{62/96 (64.6\%)} \\
+\bottomrule
+\end{tabular}
+\end{table}

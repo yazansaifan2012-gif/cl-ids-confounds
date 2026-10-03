@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\caption{Second online backbone. Each row pair is the same arm with Adaptive Random Forest (ARF) or Streaming Random Patches (SRP) as the online expert $F_O$; the batch expert, guard, gate and seeds are unchanged. Mean CL-F1 per stream and per regime, and the best fixed weight versus the adaptive gate for each backbone.}
+\label{tab:hybrid_srp}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llcccccccc}
+\toprule
+Arm & $F_O$ & CICIDS2017 & UNSW-NB15 & IoT-23 & MQTTset & TON-IoT & Edge-IIoTset & Drift-4 & All-6 \\
+\midrule
+online expert alone & ARF & 0.5474 & 0.3093 & 0.5397 & 0.8578 & 0.3301 & 0.1562 & 0.5636 & 0.4567 \\
+ & SRP & 0.4851 & 0.2523 & 0.4470 & 0.7144 & 0.3016 & 0.1478 & 0.4747 & 0.3914 \\
+\midrule
+prequential mixture & ARF & 0.5227 & 0.5351 & 0.6980 & 0.8949 & 0.2902 & 0.2320 & 0.6627 & 0.5288 \\
+ & SRP & 0.4926 & 0.5353 & 0.6967 & 0.8946 & 0.2674 & 0.2038 & 0.6548 & 0.5151 \\
+\midrule
+Dynamic Weighted Majority & ARF & 0.4521 & 0.5351 & 0.6967 & 0.8947 & 0.2157 & 0.1689 & 0.6447 & 0.4939 \\
+ & SRP & 0.4309 & 0.5351 & 0.6967 & 0.8947 & 0.2089 & 0.1463 & 0.6394 & 0.4854 \\
+\midrule
+\multicolumn{10}{l}{\emph{ARF, drift-4: gate 0.6627; best fixed $w$ = 0.4, 0.6730; gate $-$ best $= -0.0103$}} \\
+\multicolumn{10}{l}{\emph{ARF, all-6: gate 0.5288; best fixed $w$ = 0.3, 0.5288; gate $-$ best $= +0.0001$}} \\
+\multicolumn{10}{l}{\emph{SRP, drift-4: gate 0.6548; best fixed $w$ = 0.6, 0.6499; gate $-$ best $= +0.0050$}} \\
+\multicolumn{10}{l}{\emph{SRP, all-6: gate 0.5151; best fixed $w$ = 0.8, 0.4915; gate $-$ best $= +0.0235$}} \\
+\bottomrule
+\end{tabular}
+\end{table*}

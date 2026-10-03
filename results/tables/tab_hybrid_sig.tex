@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{\new{Statistical comparison under the primary protocol on the four time-interleaved streams. Dataset-level tests ($n{=}4$, seeds averaged first) are primary; seed-level tests ($n{=}12$) are secondary. `Pos.' counts streams on which the first method is ahead.}}
+\label{tab:hybrid_sig}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+& & \multicolumn{3}{c}{\new{Dataset-level ($n{=}4$)}} & \multicolumn{2}{c}{\new{Seed-level ($n{=}12$)}} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}
+\new{Comparison} & \new{$\Delta$} & \new{Pos.} & \new{$t$} & \new{95\% CI} & \new{$t$} & \new{Wilcoxon} \\
+\midrule
+\new{CADENCE-H vs CADENCE-R} & \new{$+0.0234$} & \new{4/4} & \new{$0.382$} & \new{$[-0.049,\,+0.096]$} & \new{$0.154$} & \new{$0.027$} \\
+\new{CADENCE-H vs ARF} & \new{$+0.0992$} & \new{3/4} & \new{$0.179$} & \new{$[-0.082,\,+0.280]$} & \new{$0.008$} & \new{$0.016$} \\
+\new{CADENCE-H vs PWPAE-fair} & \new{$+0.1422$} & \new{4/4} & \new{$0.095$} & \new{$[-0.046,\,+0.330]$} & \new{$<0.001$} & \new{$0.001$} \\
+\new{CADENCE-H vs Static-XGB} & \new{$+0.0975$} & \new{2/4} & \new{$0.381$} & \new{$[-0.205,\,+0.401]$} & \new{$0.079$} & \new{$0.151$} \\
+\new{CADENCE-B vs Naive-XGB} & \new{$+0.0357$} & \new{4/4} & \new{$0.083$} & \new{$[-0.009,\,+0.080]$} & \new{$0.002$} & \new{$<0.001$} \\
+\new{ER-XGB vs Naive-XGB} & \new{$+0.0533$} & \new{4/4} & \new{$0.050$} & \new{$[-0.000,\,+0.107]$} & \new{$0.001$} & \new{$<0.001$} \\
+\new{CADENCE-H vs CADENCE-H-ng} & \new{$+0.0004$} & \new{3/4} & \new{$0.749$} & \new{$[-0.003,\,+0.004]$} & \new{$0.750$} & \new{$1.000$} \\
+\new{PWPAE-interleaved vs PWPAE-fair} & \new{$+0.1117$} & \new{3/4} & \new{$0.302$} & \new{$[-0.174,\,+0.397]$} & \new{$0.037$} & \new{$0.007$} \\
+\new{CADENCE-R-leaky vs CADENCE-R} & \new{$+0.0010$} & \new{4/4} & \new{$0.089$} & \new{$[-0.000,\,+0.002]$} & \new{$0.224$} & \new{$0.375$} \\
+\new{CADENCE-H vs DWM} & \new{$+0.0181$} & \new{4/4} & \new{$0.379$} & \new{$[-0.038,\,+0.074]$} & \new{$0.140$} & \new{$0.027$} \\
+\new{CADENCE-B vs Static-XGB} & \new{$+0.0574$} & \new{2/4} & \new{$0.440$} & \new{$[-0.148,\,+0.263]$} & \new{$0.124$} & \new{$0.432$} \\
+\new{CADENCE-R vs ER-XGB} & \new{$-0.0008$} & \new{0/4} & \new{$0.168$} & \new{$[-0.002,\,+0.001]$} & \new{$0.343$} & \new{$0.432$} \\
+\new{ER-XGB vs Static-XGB} & \new{$+0.0750$} & \new{2/4} & \new{$0.377$} & \new{$[-0.156,\,+0.306]$} & \new{$0.076$} & \new{$0.151$} \\
+\bottomrule
+\end{tabular}}
+\end{table}

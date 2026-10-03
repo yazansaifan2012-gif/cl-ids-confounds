@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{\new{Records per stage and per guard slice (mean over seeds), the smallest per-class count in the guard slice, and expert complementarity: the fraction of stage records on which the two experts' predictions differ, and the fraction that at least one expert classifies correctly (record-level oracle).}}
+\label{tab:hybrid_diag}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lcccccc}
+\toprule
+\new{Dataset} & \new{Stage} & \new{Guard} & \new{Min/class} & \new{Disagree} & \new{Oracle$_\cup$} & \new{Mixture} \\
+\midrule
+\new{CICIDS2017} & \new{1513} & \new{379} & \new{77.2} & \new{0.141} & \new{0.742} & \new{0.5227} \\
+\new{UNSW-NB15} & \new{1719} & \new{430} & \new{3.8} & \new{0.555} & \new{0.695} & \new{0.5351} \\
+\new{IoT-23} & \new{1512} & \new{378} & \new{1.2} & \new{0.219} & \new{0.860} & \new{0.6980} \\
+\new{MQTTset} & \new{1306} & \new{327} & \new{5.6} & \new{0.117} & \new{0.916} & \new{0.8949} \\
+\new{TON-IoT} & \new{1719} & \new{430} & \new{233.6} & \new{0.317} & \new{0.712} & \new{0.2902} \\
+\new{Edge-IIoTset} & \new{1513} & \new{379} & \new{119.6} & \new{0.685} & \new{0.394} & \new{0.2320} \\
+\bottomrule
+\end{tabular}
+\end{table}
